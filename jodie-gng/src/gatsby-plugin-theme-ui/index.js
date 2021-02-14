@@ -67,6 +67,7 @@ const theme = merge(tailwind, {
     },
     a: {
       transition: `all 0.3s ease-in-out`,
+      fontsize: [1],
       color: `black`,
       textDecoration: `none`,
       "&:hover, &:focus": {
