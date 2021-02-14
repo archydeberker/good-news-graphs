@@ -1,22 +1,34 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Good News Graphs`,
+    siteTitleAlt: `Good News Graphs`,
+    siteHeadline: `Good News Graphs`,
+    siteUrl: `http://www.google.com`,
+    siteDescription: `Good news about climate change, in graphs.`,
   },
   plugins: [
+    {
+      resolve: `@lekoarts/gatsby-theme-emilia`,
+      options: {
+        projectsPath: `content/posts`,
+        mdx: false,
+        showThemeAuthor: false,
+      },
+    },
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
         navigation: [
           {
-            title: `Blog`,
-            slug: `/blog`,
+            title: `Graphs`,
+            slug: `/graphs`,
           },
           {
             title: `About`,
@@ -26,11 +38,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/goodnewsgraphs`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `Github`,
+            url: `https://github.com/archydeberker/good-news-graphs`,
           },
         ],
       },
@@ -45,9 +57,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Good News Graphs`,
+        short_name: `good-news-graphs`,
+        description: `Good news about climate change, graphically delivered.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
@@ -77,4 +89,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
