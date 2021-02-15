@@ -1,92 +1,81 @@
-require(`dotenv`).config({
-  path: `.env`,
-});
-
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
-
 module.exports = {
   siteMetadata: {
-    siteTitle: `Good News Graphs`,
-    siteTitleAlt: `Good News Graphs`,
-    siteHeadline: `Good News Graphs`,
-    siteUrl: `http://www.google.com`,
-    siteDescription: `Good news about climate change, in graphs.`,
+    title: `Gatsby Starter Blog`,
+    author: {
+      name: `Good News Graphs`,
+      summary: `Good news about climate change, in graphs`,
+    },
+    description: `A starter blog demonstrating what Gatsby can do.`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    social: {
+      twitter: `kylemathews`,
+    },
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+
     {
-      resolve: `@lekoarts/gatsby-theme-emilia`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        projectsPath: `content/posts`,
-        mdx: false,
-        showThemeAuthor: false,
-      },
-    },
-    {
-      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
-      // See the theme's README for all available options
-      options: {
-        navigation: [
+        gatsbyRemarkPlugins: [
           {
-            title: `Graphs`,
-            slug: `/graphs`,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+            },
           },
           {
-            title: `About`,
-            slug: `/about`,
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
-        ],
-        externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/goodnewsgraphs`,
-          },
-          {
-            name: `Github`,
-            url: `https://github.com/archydeberker/good-news-graphs`,
-          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+          `gatsby-plugin-twitter`,
         ],
       },
     },
+    `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Good News Graphs`,
-        short_name: `good-news-graphs`,
-        description: `Good news about climate change, graphically delivered.`,
+        name: `Gatsby Starter Blog`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#6B46C1`,
-        display: `standalone`,
-        icons: [
-          {
-            src: `/android-chrome-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
-    shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
-      },
-    },
-  ].filter(Boolean),
-};
+    `gatsby-plugin-react-helmet`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+  ],
+}
