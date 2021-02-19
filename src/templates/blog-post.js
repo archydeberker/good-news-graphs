@@ -1,23 +1,23 @@
 /** @jsx jsx */
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Graph from "../components/graph"
-import Tweet from "../components/tweet"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Graph from "../components/graph";
+import Tweet from "../components/tweet";
 
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Styled, jsx } from "theme-ui"
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Styled, jsx } from "theme-ui";
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.mdx
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const post = data.mdx;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = data;
   const sharingImage = post.frontmatter.sharingImage
     ? post.frontmatter.sharingImage.childImageSharp.resize
-    : post.frontmatter.coverImage.childImageSharp.resize
+    : post.frontmatter.coverImage.childImageSharp.resize;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <Styled.h1 itemProp="headline">{post.frontmatter.title}</Styled.h1>
+          <Styled.h2 itemProp="headline">{post.frontmatter.title}</Styled.h2>
           <Styled.p sx={{ variant: "styles.date" }}>
             {post.frontmatter.date}
           </Styled.p>
@@ -76,10 +76,10 @@ const BlogPostTemplate = ({ data, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -138,4 +138,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

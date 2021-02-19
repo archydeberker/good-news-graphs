@@ -1,14 +1,12 @@
 /** @jsx jsx */
 
-import React from "react"
-import { jsx } from "theme-ui"
+import React from "react";
+import { jsx } from "theme-ui";
 
 const Bio = () => {
   return (
     <div sx={{ py: 2 }}>
-      <h3
-        sx={{ color: "secondary", textAlign: "center", fontWeight: "heading" }}
-      >
+      <h3 sx={{ color: "primary", textAlign: "center", fontWeight: "heading" }}>
         <strong>Sign up to receive one Good News Graph each week</strong>
       </h3>
       <iframe
@@ -20,7 +18,7 @@ const Bio = () => {
         scrolling="no"
       ></iframe>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

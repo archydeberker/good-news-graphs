@@ -1,4 +1,5 @@
 import "fontsource-inter/200.css";
+import "fontsource-inter/300.css";
 import "fontsource-inter/400.css";
 import "fontsource-inter/600.css";
 import "fontsource-inter/800.css";
@@ -14,7 +15,7 @@ export default {
 
   links: {
     cta: {
-      color: "secondary",
+      color: "primary",
     },
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -22,8 +23,8 @@ export default {
     sidebar: 256,
   },
   fontWeights: {
-    body: 400,
-    heading: 200,
+    body: 300,
+    heading: 400,
     bold: 800,
   },
   lineHeights: {
@@ -77,14 +78,14 @@ export default {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 4,
+      fontWeight: "bold",
+      fontSize: 5,
     },
     h3: {
-      color: "primary",
+      color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: "bold",
       fontSize: 3,
     },
     h4: {

@@ -35,8 +35,9 @@ const Layout = ({ location, title, children }) => {
               flexGrow: 999999,
               flexBasis: 0,
               minWidth: 320,
+
               mx: [0, 0, 4],
-              px: [0, 3, 6],
+              px: [0, 0, 2],
             }}
           >
             {children}
