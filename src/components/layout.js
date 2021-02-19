@@ -1,11 +1,9 @@
 /** @jsx jsx */
-import React from "react"
-import { Link } from "gatsby"
-import { Styled, jsx } from "theme-ui"
-import Sidebar from "./footer"
-import "../normalize.css"
-
-import "fontsource-inter"
+import React from "react";
+import { Link } from "gatsby";
+import { Styled, jsx } from "theme-ui";
+import Sidebar from "./footer";
+import "../normalize.css";
 
 const Layout = ({ location, title, children }) => {
   return (
@@ -46,7 +44,7 @@ const Layout = ({ location, title, children }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

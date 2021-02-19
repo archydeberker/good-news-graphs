@@ -1,8 +1,13 @@
+import "fontsource-inter/200.css";
+import "fontsource-inter/400.css";
+import "fontsource-inter/600.css";
+import "fontsource-inter/800.css";
+
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
-      'inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'inter,Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     monospace: "Menlo, monospace",
   },
@@ -17,9 +22,9 @@ export default {
     sidebar: 256,
   },
   fontWeights: {
-    body: 300,
-    heading: 800,
-    bold: 700,
+    body: 400,
+    heading: 200,
+    bold: 800,
   },
   lineHeights: {
     body: 1.5,
@@ -51,7 +56,7 @@ export default {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: "bold",
       fontSize: 6,
       textDecoration: `underline`,
       textDecorationColor: `#ed8008`,
@@ -143,4 +148,4 @@ export default {
       maxWidth: "100%",
     },
   },
-}
+};
