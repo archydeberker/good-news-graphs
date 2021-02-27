@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Good News Graphs`,
     author: {
       name: `Good News Graphs`,
       summary: `Good news about climate change, in graphs`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Good news about climate change, in graphs`,
+    siteUrl: `https://goodnewsgraphs.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `archydeb`,
     },
   },
   plugins: [

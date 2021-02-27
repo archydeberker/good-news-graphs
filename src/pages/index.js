@@ -1,16 +1,16 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Card from "../components/card"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Card from "../components/card";
 
-import { Grid } from "theme-ui"
+import { Grid } from "theme-ui";
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMdx.nodes
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const posts = data.allMdx.nodes;
 
   if (posts.length === 0) {
     return (
@@ -23,17 +23,17 @@ const BlogIndex = ({ data, location }) => {
           gatsby-config.js).
         </p>
       </Layout>
-    )
+    );
   }
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       {/* <Bio /> */}
-      <Grid gap={2} columns={[1, 1, 1]}>
+      <Grid gap={2} columns={[1, 1, 2]}>
         {/* <ol style={{ listStyle: `none` }}> */}
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+        {posts.map((post) => {
+          const title = post.frontmatter.title || post.fields.slug;
 
           return (
             <Card
@@ -42,15 +42,15 @@ const BlogIndex = ({ data, location }) => {
               link={post.fields.slug}
               coverImage={post.frontmatter.coverImage}
             />
-          )
+          );
         })}
       </Grid>
       {/* </ol> */}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -80,4 +80,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
