@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       {/* <Bio /> */}
-      <Grid gap={2} columns={[1, 1, 2]}>
+      <Grid gap={2} columns={[1, 1, 2]} sx={{ mt: [3, 0, 0] }}>
         {/* <ol style={{ listStyle: `none` }}> */}
         {posts.map((post) => {
           const title = post.frontmatter.title || post.fields.slug;
