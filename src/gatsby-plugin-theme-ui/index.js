@@ -16,6 +16,7 @@ export default {
   links: {
     cta: {
       color: "primary",
+      textDecoration: "none",
     },
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -43,7 +44,7 @@ export default {
     text: "#000",
     background: "#ffffff",
     primary: "#ed8008",
-    secondary: "#ed3f1c",
+    secondary: "rgba(10,70,150,.3)",
     muted: "#d9d2c6",
   },
   styles: {
@@ -66,7 +67,7 @@ export default {
         color: `primary`,
       },
     },
-    date: { color: "muted", mt: -3 },
+    date: { color: "secondary", mt: -3 },
     h1: {
       color: "text",
       fontFamily: "heading",
@@ -89,7 +90,7 @@ export default {
       fontSize: 3,
     },
     h4: {
-      color: "muted",
+      color: "secondary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -117,6 +118,7 @@ export default {
     },
     a: {
       color: "text",
+      textDecorationColor: "rgba(10,70,150,.3)",
       "&:hover, &:focus": {
         textDecoration: "underline",
       },
