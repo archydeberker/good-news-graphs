@@ -83,7 +83,7 @@ export default {
       fontSize: 5,
     },
     h3: {
-      color: "text",
+      color: "gray",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "bold",
@@ -116,13 +116,13 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
     },
-    a: {
-      color: "text",
-      textDecorationColor: "rgba(10,70,150,.3)",
-      "&:hover, &:focus": {
-        textDecoration: "underline",
-      },
-    },
+    // a: {
+    //   color: "text",
+    //   textDecorationColor: "rgba(10,70,150,.3)",
+    //   "&:hover, &:focus": {
+    //     textDecoration: "underline",
+    //   },
+    // },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
