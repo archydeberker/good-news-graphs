@@ -1,12 +1,73 @@
 ---
 title: What is machine learning and why should I care?
 date: "2021-02-28"
-description: In 2020, the majority of new cars sold in Norway were battery-powered EVs.
+description: Lesson 1
 coverImage: EVs.png
 sharingImage: EVs.png
-graph: "/graphs/NorwayEVs_noTitle.html"
 ---
 
 import Regression from "components/regression";
+import Scatter from "components/scatter";
+
+import { Input, Output } from "components/highlights";
+
+import { Message, Box } from "theme-ui";
+import dogs from "data/dogs";
+
+## What will I learn?
+
+1. What is a model?
+
+2. Why would I need one?
+
+3. What does it mean for a model to learn?
+
+## Who needs a model, anyway?
+
+Many problems in the real world have the form:
+
+<h6>
+  I have a bunch of numbers and I'd like them to be mapped to another number
+</h6>
+It's helpful to label these as <Input>inputs</Input> (the numbers you have) and <Output>
+  outputs
+</Output> (the numbers you want).
+
+A model is simply an algorithm that helps us perform that mapping, from Input => Output.[^1]
+
+Some examples:
+
+- I have the <Input> speeds </Input> and locations of some parcels, and I need to know <Output> when they will arrive </Output>
+
+- I have the <Input>mock exam results </Input>of some kids who can't sit their real exams due to COVID, I want to <Output> estimate their grades</Output>
+
+- I have the <Input>weights of some puppies </Input> and I want to know <Output>how heavy they will be in 12 weeks time</Output>
+
+Although it's not immediately obvious, there are many other problems of this form, because computers understand _everything_ as numbers,
+and so stuff that we wouldn't consider numbers are also just numbers to a computer:
+
+- Is this a <Input> photo </Input> of an <Output>Alsatian or a Corgi </Output>(_images are numbers_)
+- Is this <Input>email </Input>a <Output>complaint or an enquiry</Output> about a booking (_words are numbers_)
+- I've got a <Input>recording of Don't Stop Me Now </Input>, I'd like a <Output>version without the singing for karaoke </Output> (_sounds are numbers_)
+
+We'll return to this topic - how can we map everything onto numbers so that computers can understand it - in lesson 3. For now,
+you're going to have to take my word for it.
+
+For now, let's return to those puppies, because they're adorable. And because I recently had to book a transatlanic flight for a rapidly
+growing puppy, so I needed to figure out how much he was likely to weigh when we took the flight.
+
+<Scatter x={dogs.age} y={dogs.weight} />
+
+In this case, what I have - the input - is the <Input> age of the dog </Input> and what I want - the output - is the <Output> weight </Output>.
+
+Squinting at this graph, you can see there's a relationship here, right? And if we were to try and draw that relationship, it might look something like this:
+
+<Scatter x={dogs.age} y={dogs.weight} line={true} />
 
 <Regression />
+
+[^1]:
+    I found this phrasing pretty confusing for a long time, because "modelling" usually means replicating a complex system (like the weather) in a simpler
+    piece of maths. Similarly in biology, when we use a "model" organism, it's a simpler example of a system we care about (like a human) but that's easier to
+    study and manipulate (like a fly). But in machine learning, we aren't usually trying to copy a system that exists: we're just trying to map from Inputs
+    to Outputs.

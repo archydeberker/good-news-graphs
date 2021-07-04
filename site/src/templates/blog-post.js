@@ -32,12 +32,12 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <Styled.h2 itemProp="headline">{post.frontmatter.title}</Styled.h2>
           <Styled.p sx={{ variant: "styles.date" }}>
-            {post.frontmatter.date}
+            {post.frontmatter.description}
           </Styled.p>
+          <Styled.h1 itemProp="headline">{post.frontmatter.title}</Styled.h1>
         </header>
-        <Graph url={post.frontmatter.graph} />
+
         {/* <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"

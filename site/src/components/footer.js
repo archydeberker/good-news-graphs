@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx, Link, Flex, Box } from "theme-ui"
+import React from "react";
+import { jsx, Link, Flex, Box } from "theme-ui";
 
 export default function Sidebar() {
   return (
@@ -9,7 +9,7 @@ export default function Sidebar() {
         <header
           sx={{ variant: "styles.header", textAlign: ["center", "left"] }}
         >
-          Good News Graphs{" "}
+          Intuitive ML
         </header>
       </Link>
       <Flex
@@ -33,5 +33,5 @@ export default function Sidebar() {
         </Box>
       </Flex>
     </div>
-  )
+  );
 }

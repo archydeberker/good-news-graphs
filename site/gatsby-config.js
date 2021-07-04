@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Good News Graphs`,
+    title: `Intuitive ML`,
     author: {
-      name: `Good News Graphs`,
-      summary: `Good news about climate change, in graphs`,
+      name: `Intuitive ML`,
+      summary: `Intuitive tutorials in machine learning`,
     },
-    description: `Good news about climate change, in graphs`,
-    siteUrl: `https://goodnewsgraphs.com`,
+    description: `Intuitive tutorials in machine learning`,
+    siteUrl: `https://intuitive.ml`,
     social: {
       twitter: `archydeb`,
     },

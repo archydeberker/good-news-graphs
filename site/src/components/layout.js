@@ -7,7 +7,7 @@ import "../normalize.css";
 
 const Layout = ({ location, title, children }) => {
   return (
-    <div sx={{ mx: "auto", maxWidth: 1500 }}>
+    <div sx={{ margin: "0 auto", maxWidth: 800, width: "100%" }}>
       <div
         sx={{
           p: 2,
@@ -22,14 +22,16 @@ const Layout = ({ location, title, children }) => {
             flexWrap: "wrap",
           }}
         >
-          <aside
+          {/* <aside
             sx={{
               flexGrow: 1,
               flexBasis: "sidebar",
+              maxWidth: 200,
             }}
           >
             <Sidebar />
-          </aside>
+          </aside> */}
+
           <main
             sx={{
               flexGrow: 999999,

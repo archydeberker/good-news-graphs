@@ -11,6 +11,7 @@ export default {
       '-apple-system, BlinkMacSystemFont, Segoe UI,  Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     monospace: "Menlo, monospace",
+    serif: "Times New Roman, serif",
   },
 
   links: {
@@ -46,6 +47,8 @@ export default {
     primary: "#ed8008",
     secondary: "rgba(10,70,150,.3)",
     muted: "#d9d2c6",
+    input: "rgba(10,70,150,1)",
+    output: "red",
   },
   styles: {
     root: {
@@ -67,20 +70,24 @@ export default {
         color: `primary`,
       },
     },
-    date: { color: "secondary", mt: -3 },
+    date: { color: "secondary", mb: -4 },
+    inputs: {
+      color: "rgb(255,0,0)",
+    },
     h1: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: 5,
+      fontSize: 6,
     },
     h2: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "bold",
-      fontSize: 5,
+      fontSize: 4,
+      mt: 3,
     },
     h3: {
       color: "gray",
@@ -88,6 +95,7 @@ export default {
       lineHeight: "heading",
       fontWeight: "bold",
       fontSize: 3,
+      mt: 3,
     },
     h4: {
       color: "secondary",
@@ -103,19 +111,24 @@ export default {
       fontWeight: "heading",
       fontSize: 1,
     },
-    h6: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 0,
-    },
+
     p: {
       color: "text",
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
     },
+
+    h6: {
+      color: "text",
+      fontSize: 3,
+      fontWeight: "body",
+      fontStyle: "italic",
+      fontFamily: "serif",
+      lineHeight: "body",
+      px: "20px",
+    },
+
     // a: {
     //   color: "text",
     //   textDecorationColor: "rgba(10,70,150,.3)",
