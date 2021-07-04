@@ -7,7 +7,6 @@ import Slider from "@material-ui/core/Slider";
 const dataX = [0, 2, 4, 3, 4, 5, 2, 5, 8, 15, 13, 15, 16];
 const dataY = [1, 2, 5, 2.3, 4, 7, 1.1, 6, 9.2, 12, 15, 17, 18];
 
-const workoutMAE = (data, line) => {};
 const linear_regression = (slope, intercept, x) => {
   return slope * x + intercept;
 };
@@ -29,6 +28,15 @@ const Equation = ({ slope, intercept }) => {
   );
 };
 
+const sumReducer = (accumulator, value) => accumulator + value;
+
+const MAE = (slope, intercept, X, y) => {
+  const errors = X.map((x, idx) =>
+    Math.abs(linear_regression(slope, intercept, x) - y[idx])
+  );
+
+  return errors.reduce(sumReducer).toFixed(2);
+};
 const drawErrors = (slope, intercept, X, y) => {
   const points = X.map((x, idx) => {
     return { x: x, y_hat: linear_regression(slope, intercept, x), y: y[idx] };
@@ -39,7 +47,7 @@ const drawErrors = (slope, intercept, X, y) => {
     y: [p.y_hat, p.y],
     type: "scatter",
     mode: "lines",
-    marker: { color: "green" },
+    marker: { color: "red" },
   }));
 };
 
@@ -104,7 +112,7 @@ const App = () => {
             y: y,
             type: "scatter",
             mode: "lines",
-            marker: { color: "red" },
+            marker: { color: "black" },
           },
 
           {
@@ -121,9 +129,9 @@ const App = () => {
           xaxis: { range: [0, 20] },
           yaxis: { range: [0, 20] },
           showlegend: false,
-          title: isChanging ? "Changing" : "Fixed",
         }}
       />
+      <h1> {MAE(slopeValue, interceptValue, dataX, dataY)}</h1>
     </Styled>
   );
 };
