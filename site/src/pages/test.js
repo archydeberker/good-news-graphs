@@ -114,7 +114,7 @@ const App = () => {
             mode: "markers",
             marker: { color: "blue  " },
           },
-        ].concat(errors)}
+        ].concat(isChanging ? errors : [])}
         layout={{
           width: 800,
           height: 500,
