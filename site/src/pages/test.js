@@ -8,6 +8,9 @@ const dataX = [0, 2, 4, 3, 4, 5, 2, 5, 8, 15, 13, 15, 16];
 const dataY = [1, 2, 5, 2.3, 4, 7, 1.1, 6, 9.2, 12, 15, 17, 18];
 
 const workoutMAE = (data, line) => {};
+const linear_regression = (slope, intercept, x) => {
+  return slope * x + intercept;
+};
 const defineLine = (slope, intercept) => {
   const x = [0, 20];
   const y = [intercept, slope * 20 + intercept];
@@ -26,10 +29,14 @@ const Equation = ({ slope, intercept }) => {
   );
 };
 
-const drawErrors = (dataX) => {
-  return dataX.map((element) => ({
-    x: [element, element],
-    y: [element, element + 1],
+const drawErrors = (slope, intercept, X, y) => {
+  const points = X.map((x, idx) => {
+    return { x: x, y_hat: linear_regression(slope, intercept, x), y: y[idx] };
+  });
+
+  return points.map((p) => ({
+    x: [p.x, p.x],
+    y: [p.y_hat, p.y],
     type: "scatter",
     mode: "lines",
     marker: { color: "green" },
@@ -44,7 +51,7 @@ const App = () => {
 
   const [x, y] = defineLine(slopeValue, interceptValue);
 
-  const errors = drawErrors(dataX, dataY);
+  const errors = drawErrors(slopeValue, interceptValue, dataX, dataY);
   console.log(errors);
   return (
     <Styled
