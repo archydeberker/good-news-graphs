@@ -9,7 +9,7 @@ sharingImage: EVs.png
 import Regression from "components/regression";
 import Scatter from "components/scatter";
 
-import { Input, Output } from "components/highlights";
+import { Input, Output, EquationBox } from "components/highlights";
 
 import { Message, Box } from "theme-ui";
 import dogs from "data/dogs";
@@ -56,14 +56,34 @@ you're going to have to take my word for it.
 For now, let's return to those puppies, because they're adorable. And because I recently had to book a transatlanic flight for a rapidly
 growing puppy, so I needed to figure out how much he was likely to weigh when we took the flight.
 
-<Scatter x={dogs.age} y={dogs.weight} />
+<Scatter line={false} />
 
 In this case, what I have - the input - is the <Input> age of the dog </Input> and what I want - the output - is the <Output> weight </Output>.
 
 Squinting at this graph, you can see there's a relationship here, right? And if we were to try and draw that relationship, it might look something like this:
 
-<Scatter x={dogs.age} y={dogs.weight} line={true} />
+<Scatter line={true} />
 
+This line is a model!
+
+It describe show to map our input onto an output. Given an <Input> Age </Input> we can use the line to estimate the <Output> Weight </Output>.
+
+Most models can be represented like this: as a visual relationship between inputs and outputs. But they also have a mathematial definition, which is
+how computers understand them.
+
+This line represents a model called "linear regression".
+
+Why? _Linear_ means that our outputs are a weighted sum of our inputs, with no funny business,
+and it's a _regression_ because what we're trying to predict (the <Output> Weight </Output> ) is a continuous number, rather than a discrete category.
+
+Ok, brace yourself, here comes our first equation:
+
+|----|-----|
+| y| the output, what we're aiming for|
+
+<EquationBox>
+  <Output> y </Output> = m <Input> x </Input> + c
+</EquationBox>
 <Regression />
 
 [^1]:

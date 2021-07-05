@@ -10,6 +10,7 @@ const dataY = [1, 2, 5, 2.3, 4, 7, 1.1, 6, 9.2, 12, 15, 17, 18];
 const linear_regression = (slope, intercept, x) => {
   return slope * x + intercept;
 };
+
 const defineLine = (slope, intercept) => {
   const x = [0, 20];
   const y = [intercept, slope * 20 + intercept];
@@ -60,7 +61,7 @@ const App = () => {
   const [x, y] = defineLine(slopeValue, interceptValue);
 
   const errors = drawErrors(slopeValue, interceptValue, dataX, dataY);
-  console.log(errors);
+
   return (
     <Styled
       style={{
