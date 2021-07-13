@@ -14,11 +14,13 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@theme-ui/presets": "^0.3.5",
+    "@theme-ui/typography": "^0.10.0",
     "fontsource-inter": "^4.0.0",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-feed": "^2.13.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-mdx": "^1.10.0",
@@ -27,6 +29,7 @@
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-theme-ui": "^0.3.5",
     "gatsby-plugin-twitter": "^2.10.0",
+    "gatsby-plugin-typography": "^3.9.0",
     "gatsby-remark-copy-linked-files": "^2.10.0",
     "gatsby-remark-images": "^3.11.0",
     "gatsby-remark-prismjs": "^3.13.0",
@@ -42,9 +45,15 @@
     "react-loadable": "^5.5.0",
     "react-plotly.js": "^2.5.1",
     "react-share": "^4.3.1",
+    "react-typography": "^0.16.20",
     "theme-ui": "^0.3.5",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "typography": "^0.16.21",
+    "typography-theme-alton": "^0.16.19",
+    "typography-theme-funston": "^0.16.19",
+    "typography-theme-stardust": "^0.16.19",
+    "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "2.2.1"

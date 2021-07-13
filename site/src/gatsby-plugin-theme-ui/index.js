@@ -3,36 +3,25 @@ import "fontsource-inter/300.css";
 import "fontsource-inter/400.css";
 import "fontsource-inter/600.css";
 import "fontsource-inter/800.css";
+import merge from "deepmerge";
+import wp2016 from "typography-theme-wordpress-2016";
+import alton from "typography-theme-alton";
+import stardust from "typography-theme-stardust";
+import funston from "typography-theme-funston";
+import { toTheme } from "@theme-ui/typography";
 
-export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fonts: {
-    body:
-      '-apple-system, BlinkMacSystemFont, Segoe UI,  Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
-    monospace: "Menlo, monospace",
-    serif: "Times New Roman, serif",
-  },
-
+export default merge(toTheme(alton), {
   links: {
     cta: {
       color: "primary",
       textDecoration: "none",
     },
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+
   sizes: {
     sidebar: 256,
   },
-  fontWeights: {
-    body: 300,
-    heading: 400,
-    bold: 800,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
+
   images: {
     card: {
       opacity: "10%",
@@ -51,91 +40,11 @@ export default {
     output: "red",
   },
   styles: {
-    root: {
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
-    },
-    header: {
-      textAlign: "left",
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "bold",
-      fontSize: 6,
-      textDecoration: `underline`,
-      textDecorationColor: `#ed8008`,
-      transition: `all 0.3s ease-in-out`,
-      "&:hover, &:focus": {
-        color: `primary`,
-      },
-    },
-    date: { color: "secondary", mb: -4 },
+    date: { color: "secondary" },
     inputs: {
       color: "rgb(255,0,0)",
     },
-    h1: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 6,
-    },
-    h2: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "bold",
-      fontSize: 4,
-      mt: 3,
-    },
-    h3: {
-      color: "gray",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "bold",
-      fontSize: 3,
-      mt: 3,
-    },
-    h4: {
-      color: "secondary",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 2,
-    },
-    h5: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 1,
-    },
 
-    p: {
-      color: "text",
-      fontFamily: "body",
-      fontWeight: "body",
-      lineHeight: "body",
-    },
-
-    h6: {
-      color: "text",
-      fontSize: 3,
-      fontWeight: "body",
-      fontStyle: "italic",
-      fontFamily: "serif",
-      lineHeight: "body",
-      px: "20px",
-    },
-
-    // a: {
-    //   color: "text",
-    //   textDecorationColor: "rgba(10,70,150,.3)",
-    //   "&:hover, &:focus": {
-    //     textDecoration: "underline",
-    //   },
-    // },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
@@ -164,4 +73,4 @@ export default {
       maxWidth: "100%",
     },
   },
-};
+});

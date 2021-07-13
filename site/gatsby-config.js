@@ -38,12 +38,19 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-theme-ui`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`domine`, `open sans`],
+        display: "swap",
       },
     },
     {
@@ -60,6 +67,7 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    "gatsby-plugin-theme-ui",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
